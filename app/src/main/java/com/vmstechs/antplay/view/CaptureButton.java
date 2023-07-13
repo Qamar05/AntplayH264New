@@ -14,44 +14,44 @@ import android.view.View;
 
 public class CaptureButton extends View {
 
-    private int state;              //当前按钮状态
-    private int button_state;       //按钮可执行的功能状态（拍照,录制,两者）
+    private int state;
+    private int button_state;
 
-    public static final int STATE_IDLE = 0x001;        //空闲状态
-    public static final int STATE_PRESS = 0x002;       //按下状态
-    public static final int STATE_LONG_PRESS = 0x003;  //长按状态
-    public static final int STATE_RECORDERING = 0x004; //录制状态
-    public static final int STATE_BAN = 0x005;         //禁止状态
+    public static final int STATE_IDLE = 0x001;
+    public static final int STATE_PRESS = 0x002;
+    public static final int STATE_LONG_PRESS = 0x003;
+    public static final int STATE_RECORDERING = 0x004;
+    public static final int STATE_BAN = 0x005;
 
-    public static final int BUTTON_STATE_ONLY_CAPTURE = 0x101;      //只能拍照
-    public static final int BUTTON_STATE_ONLY_RECORDER = 0x102;     //只能录像
-    public static final int BUTTON_STATE_BOTH = 0x103;              //两者都可以
+    public static final int BUTTON_STATE_ONLY_CAPTURE = 0x101;
+    public static final int BUTTON_STATE_ONLY_RECORDER = 0x102;
+    public static final int BUTTON_STATE_BOTH = 0x103;
 
-    private int progress_color = 0xEE16AE16;            //进度条颜色
-    private int outside_color = 0xEEDCDCDC;             //外圆背景色
-    private int inside_color = 0xFFFFFFFF;              //内圆背景色
+    private int progress_color = 0xEE16AE16;
+    private int outside_color = 0xEEDCDCDC;
+    private int inside_color = 0xFFFFFFFF;
 
 
-    private float event_Y;  //Touch_Event_Down时候记录的Y值
+    private float event_Y;
 
 
     private Paint mPaint;
 
-    private float strokeWidth;          //进度条宽度
-    private int outside_add_size;       //长按外圆半径变大的Size
-    private int inside_reduce_size;     //长安内圆缩小的Size
+    private float strokeWidth;
+    private int outside_add_size;
+    private int inside_reduce_size;
 
     //中心坐标
     private float center_X;
     private float center_Y;
 
-    private float button_radius;            //按钮半径
-    private float button_outside_radius;    //外圆半径
-    private float button_inside_radius;     //内圆半径
-    private int button_size;                //按钮大小
+    private float button_radius;
+    private float button_outside_radius;
+    private float button_inside_radius;
+    private int button_size;
 
-    private float progress;         //录制视频的进度
-    private int duration;           //录制视频最大时间长度
+    private float progress;
+    private int duration;
     private int min_duration;       //最短录制时间限制
     private int recorded_time;      //记录当前录制的时间
 
